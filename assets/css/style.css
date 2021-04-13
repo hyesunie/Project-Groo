@@ -1,0 +1,6 @@
+@import "config/reset.css";
+@import "config/_variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import "main.css";
+
+@import "partials/header.css";
