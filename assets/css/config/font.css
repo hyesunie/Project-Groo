@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "cafe24_oneprettynightregular";
+  src: url("../fonts/cafe24oneprettynight.woff2") format("woff2"),
+    url("../fonts/cafe24oneprettynight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mapoflowerislandregular";
+  src: url("../fonts/MapoFlowerIsland.ttf") format("ttf"),
+    url("../fonts/mapoflowerisland-webfont.woff2") format("woff2"),
+    url("../fonts/mapoflowerisland-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,26 @@
+.habit__container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habit__list form {
+  height: 100%;
+  width: 30rem;
+  font-family: "Jeju Myeongjo", serif;
+}
+
+.tree__container {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tree__container a {
+  font-family: "Jeju Myeongjo", serif;
+
+  /* font-family: "mapoflowerislandregular"; */
+}

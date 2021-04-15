@@ -1,6 +1,10 @@
 @import "config/reset.css";
 @import "config/_variables.css";
+@import "config/font.css";
+
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 @import "main.css";
 
 @import "partials/header.css";
+@import "pages/home.css";
