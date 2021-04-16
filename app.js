@@ -5,6 +5,7 @@ const app = express();
 
 app.use("/assets", express.static("assets"));
 app.use("/node_modules", express.static("node_modules"));
+app.use("/view", express.static("view"));
 
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
