@@ -1,0 +1,10 @@
+@import "config/reset.css";
+@import "config/_variables.css";
+@import "config/font.css";
+
+@import "main.css";
+
+@import "partials/header.css";
+@import "partials/sidebar.css";
+
+@import "pages/home.css";

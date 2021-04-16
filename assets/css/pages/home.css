@@ -1,0 +1,68 @@
+.habit__container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habit__list form {
+  height: 100%;
+  width: 100%;
+}
+
+.tree__container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tree__container a {
+  font-family: "Jeju Myeongjo", serif;
+  font-weight: 550;
+  font-size: 1.3rem;
+  color: var(--black-color);
+  margin: 3rem;
+
+  /* font-family: "mapoflowerislandregular"; */
+}
+
+.tree__container img {
+  width: 70%;
+}
+
+.tree__container h2 {
+  font-family: "Paytone One", sans-serif;
+  font-weight: normal;
+  font-size: 2.3rem;
+  margin: 2rem;
+  color: var(--logo-color);
+}
+
+input[type="button"] {
+  width: 14rem;
+  border: 0.1rem solid var(--button-line-color);
+  border-radius: 30px;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-family: "Jeju Myeongjo", serif;
+  font-size: 11px;
+}
+input:nth-child(n) {
+  margin: 5px;
+}
+input:hover {
+  background-color: var(--button-line-color);
+  color: var(--white-color);
+}
+
+input[type="image"] {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}

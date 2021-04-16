@@ -2,38 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+    <title>Groo</title>
 </head>
 <body>
     <header>
-        <div class="home__LOGO">
-            <a href="/">Groo</a>
+        <div class="header__container">
+            <a href="" class="header__LOGO">Groo</a>
+            <span class="header__menubar">
+                <i class="fal fa-bars"></i>
+            </span>
         </div>
     </header>
     <main>
         <section>
-            <form action="" method="post">
+            <div class="habit__container">
                 <div class="habit__list">
-                    <input type="button" value="장바구니 사용하기"> 
-                    <input type="button" value="손수건 사용하기"> 
-                    <input type="button" value="플러그 뽑아 두기"> 
-                    <input type="button" value="친환경 제품 사기"> 
-                    <input type="button" value="천연 세제 사용하기"> 
+
+                    <form action="" method="post">
+                        <input type="button" value="장바구니 사용하기">
+                        <input type="button" value="손수건 사용하기"> 
+                        <input type="button" value="플러그 뽑아 두기"> 
+                        <input type="button" value="친환경 제품 사기"> 
+                        <input type="button" value="천연 세제 사용하기"> 
+                        <input type="image" src="view/img/bucket.png" alt="제출버튼">
+                    </form>
                 </div>
-                <input type="submit" value="확인"> 
-            </form>
+           
+            </div>
+           
+            <div class="tree__container">
+                <a href="" class="tree__message">
+                  나의 아이를 위해 나무를 키워야지 
+                </a>
+                <img src="view/img/tree.png" alt="">
+                <h2>20 Groo</h2>
+            </div>
+        
 
         </section>
 
         <aside>
-            <div>
-                <img src="" href="/detail">
+            <div class="sidebar__profile">
+                <img src="" href="/detail.html" class="user__profile">
+                <h4> 오늘 10번 물을 주셨네요.</h4>
             </div>
-            <ul>
-                <li>Detail</li>
-                <li>Information</li>
+            <ul class="sidebar__page">
+                <li>
+                    <a href="view/detail.html" class="sidebar__detail">Detail</a>
+                </li>
+                <li>
+                    <a href="" class="sidebar__info">Information</a>
+                </li>
             </ul>
         </aside>
     </main>
