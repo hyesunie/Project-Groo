@@ -1,4 +1,13 @@
-.habit__container {
+.none {
+  display: none;
+}
+
+.userConfirmation {
+  width: 100%;
+  height: 100%;
+}
+
+.habit__list {
   height: 100%;
   width: 50%;
   display: flex;
