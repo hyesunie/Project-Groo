@@ -1,14 +1,26 @@
-.habit__container {
-  height: 100%;
-  width: 50%;
+.userConfirmation {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.habit__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
 }
 
 .habit__list form {
-  height: 100%;
-  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 80%;
 }
 
 .tree__container {
@@ -65,4 +77,8 @@ input[type="image"] {
   justify-content: center;
   align-items: center;
   width: 15%;
+}
+
+.none {
+  display: none;
 }

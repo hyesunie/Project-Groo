@@ -1,5 +1,6 @@
 import express from "express";
 import routes from "./routes";
+import globalRouter from "./routers/globalRouter";
 
 const app = express();
 
@@ -18,5 +19,7 @@ app.get(routes.home, (req, res) => {
     console.log(error);
   }
 });
+
+app.use(routes.home, globalRouter);
 
 export default app;
