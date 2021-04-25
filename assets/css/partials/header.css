@@ -22,3 +22,8 @@ header {
   font-family: "Paytone One", sans-serif;
   font-weight: normal;
 }
+
+.header__menubar {
+  border: 0;
+  background-color: var(--header-color);
+}
