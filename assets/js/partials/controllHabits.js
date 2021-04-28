@@ -4,6 +4,7 @@ const habitList = document.querySelector(".detail__habit__list");
 const inputHabit = addHabitForm.querySelector("input");
 
 let LIST = [];
+const HABIT_LIST = "habits";
 
 function deleteHabit(event) {
   const delLi = event.target.parentNode;
@@ -12,6 +13,11 @@ function deleteHabit(event) {
   LIST = newList;
 
   delLi.remove();
+  saveHabits();
+}
+
+function saveHabits() {
+  localStorage.setItem(HABIT_LIST, JSON.stringify(LIST));
 }
 
 function paintHabit(habit) {
@@ -37,6 +43,8 @@ function paintHabit(habit) {
   };
 
   LIST.push(habitobj);
+
+  saveHabits();
 }
 
 function handleAddHabitSubmit(event) {
@@ -45,7 +53,19 @@ function handleAddHabitSubmit(event) {
   inputHabit.value = "";
 }
 
+function loadHabits() {
+  const habits = JSON.parse(localStorage.getItem(HABIT_LIST));
+
+  if (habits) {
+    habits.forEach((element) => {
+      console.log(element.habit);
+      paintHabit(element.habit);
+    });
+  }
+}
+
 function init() {
+  loadHabits();
   addHabitForm.addEventListener("submit", handleAddHabitSubmit);
 }
 
