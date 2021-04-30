@@ -1,4 +1,4 @@
-const habitsContainer = document.querySelector(".detail__habits");
+const habitsContainer = document.querySelector(".detail__habits__container");
 const addHabitForm = document.querySelector(".add__habit");
 const habitList = document.querySelector(".detail__habit__list");
 const inputHabit = addHabitForm.querySelector("input");
