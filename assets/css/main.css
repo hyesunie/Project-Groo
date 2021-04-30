@@ -28,3 +28,8 @@ a {
   text-decoration: none;
   color: var(--logo-color);
 }
+
+.check {
+  background-color: var(--button-line-color);
+  color: var(--white-color);
+}
