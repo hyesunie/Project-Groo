@@ -1,2 +1,3 @@
 import "./partials/sidebar.js";
-import "./partials/controllHabits.js";
+import "./partials/controlHabits.js";
+import "./partials/controlComment.js";

@@ -58,7 +58,6 @@ function loadHabits() {
 
   if (habits) {
     habits.forEach((element) => {
-      console.log(element.habit);
       paintHabit(element.habit);
     });
   }

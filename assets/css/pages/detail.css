@@ -47,11 +47,6 @@
   border-bottom: solid var(--logo-color);
 }
 
-input:hover {
-  background-color: white;
-  color: var(--logo-color);
-}
-
 .detail__habit__list li {
   font-size: 1.1rem;
 }
