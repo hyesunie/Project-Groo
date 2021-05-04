@@ -6,27 +6,31 @@
   height: 100%;
 }
 
-.habit__list {
+.home__habit__list {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 50%;
+  width: 60%;
 }
 
-.habit__list form {
-  display: block;
+.home__habit__list form {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   height: auto;
-  width: 80%;
+  width: 100%;
+}
+
+.load__habit__list {
+  width: 60%;
 }
 
 .tree__container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
   align-items: center;
   justify-content: center;
 }
@@ -68,13 +72,11 @@
 input:nth-child(n) {
   margin: 5px;
 }
-
 input[type="image"] {
-  display: block;
-  justify-content: center;
-  align-items: center;
+  margin: 5rem;
   width: 15%;
 }
+
 .check {
   background-color: var(--button-line-color);
   color: var(--white-color);
