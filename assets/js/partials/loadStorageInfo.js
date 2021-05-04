@@ -1,6 +1,9 @@
+const homeContainer = document.querySelector(".userConfirmation");
 const loadHabitList = document.querySelector(".load__habit__list");
+const treeComment = document.querySelector(".tree__comment");
 
 const HABIT_LIST = "habits";
+const COMMENT = "comment";
 
 function handleClickhabits(event) {
   const { target } = event;
@@ -23,16 +26,24 @@ function loadHomeHabits() {
     const parseHabits = JSON.parse(habits);
 
     parseHabits.forEach((element) => {
-      console.log(typeof element.habit);
       paintHomeHabits(element.habit);
     });
   }
 }
 
-function init() {
-  loadHomeHabits();
+function loadHomeComment() {
+  const comment = localStorage.getItem(COMMENT);
+
+  if (comment) {
+    treeComment.innerHTML = comment;
+  }
 }
 
-if (loadHabitList) {
+function init() {
+  loadHomeHabits();
+  loadHomeComment();
+}
+
+if (homeContainer) {
   init();
 }
