@@ -29,7 +29,6 @@ a {
   color: var(--logo-color);
 }
 
-.check {
-  background-color: var(--button-line-color);
-  color: var(--white-color);
+input[type="text"] {
+  border: 0;
 }
