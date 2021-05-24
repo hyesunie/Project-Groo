@@ -1,4 +1,9 @@
+import { Habit } from "../localstorage/habit";
+import { User } from "../localstorage/user";
+
 export class Home {
+  #NONE = "none";
+
   constructor() {}
   get body() {
     return `<form class="firstvisit none">
@@ -19,5 +24,19 @@ export class Home {
           <h2>20 Groo</h2>
       </div>
   </div>`;
+  }
+  initaddEventListener() {
+    const habit = new Habit();
+    const user = new User();
+
+    const currentUser = user.loadUser();
+
+    this.paintPage(currentUser);
+  }
+  paintPage(name) {
+    const firstVisitor = document.querySelector(".firstvisit");
+    const userConfirmation = document.querySelector(".userConfirmation");
+    firstVisitor.classList.add(this.#NONE);
+    userConfirmation.classList.remove(this.#NONE);
   }
 }

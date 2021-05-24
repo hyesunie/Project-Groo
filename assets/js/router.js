@@ -33,5 +33,7 @@ export class Router {
 
     const section = document.querySelector("section");
     section.innerHTML = page.pageobj().body;
+
+    page.pageobj().initaddEventListener();
   }
 }
