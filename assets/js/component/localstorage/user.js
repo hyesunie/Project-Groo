@@ -21,7 +21,7 @@ export class User extends LocalStorage {
     const firstVisitor = document.querySelector(".firstvisit");
 
     firstVisitor.classList.remove(this.#NONE);
-    firstVisitor.addEventListener("submit", handleSaveUser);
+    firstVisitor.addEventListener("submit", this.handleSaveUser);
   }
 
   handleSaveUser(event) {

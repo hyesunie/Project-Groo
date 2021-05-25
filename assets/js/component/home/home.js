@@ -29,9 +29,28 @@ export class Home {
     const habit = new Habit();
     const user = new User();
 
-    const currentUser = user.loadUser();
+    const loadedHabits = habit.loadHabits();
+    const loadedUser = user.loadUser();
 
-    this.paintPage(currentUser);
+    this.paintPage(loadedUser);
+    this.paintHabits(loadedHabits);
+  }
+
+  paintHabits(habits) {
+    const loadHabitList = document.querySelector(".load__habit__list");
+
+    for (const item of habits) {
+      const input = document.createElement("input");
+      input.type = "button";
+      input.value = item.habit;
+      input.classList.add("habit__btn");
+      input.addEventListener("click", this.handleClickhabits);
+      loadHabitList.appendChild(input);
+    }
+  }
+  handleClickhabits(event) {
+    const { target } = event;
+    target.classList.toggle("check");
   }
   paintPage(name) {
     const firstVisitor = document.querySelector(".firstvisit");

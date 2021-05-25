@@ -1,7 +1,18 @@
 import { LocalStorage } from "./localstorage";
 
 export class Habit extends LocalStorage {
+  #HABIT_LIST = "habits";
   constructor() {
     super();
+  }
+  loadHabits() {
+    const habits = this.load(this.#HABIT_LIST);
+    let parseHabits = "";
+
+    if (habits) {
+      parseHabits = JSON.parse(habits);
+    }
+
+    return parseHabits;
   }
 }
