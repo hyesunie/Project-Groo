@@ -1,5 +1,6 @@
 import { Habit } from "../localstorage/habit";
 import { User } from "../localstorage/user";
+import { Comment } from "../localstorage/comment";
 
 export class Home {
   #NONE = "none";
@@ -19,18 +20,20 @@ export class Home {
           </form>
       </div>
       <div class="tree__container">
-          <a href="/detail" class="tree__comment">나의 아이를 위해 나무를 키워야지 </a>
+          <a href="/detail" data-href="/detail" class="tree__comment">나의 아이를 위해 나무를 키워야지 </a>
           <img src="view/img/tree.png" alt="">
           <h2>20 Groo</h2>
       </div>
   </div>`;
   }
-  initaddEventListener() {
+  paintInfo() {
     const habit = new Habit();
     const user = new User();
+    const comment = new Comment();
 
     const loadedHabits = habit.loadHabits();
     const loadedUser = user.loadUser();
+    const loadedCommnet = comment.loadComment();
 
     this.paintPage(loadedUser);
     this.paintHabits(loadedHabits);
@@ -57,5 +60,8 @@ export class Home {
     const userConfirmation = document.querySelector(".userConfirmation");
     firstVisitor.classList.add(this.#NONE);
     userConfirmation.classList.remove(this.#NONE);
+  }
+  paintComment(comment) {
+    treeComment.innerHTML = comment;
   }
 }
