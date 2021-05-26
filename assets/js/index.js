@@ -1,9 +1,13 @@
 import { Header } from "./component/header/header";
 import { Sidebar } from "./component/sidebar/sidebar";
+import { Router } from "./router";
 
 function init() {
   initHeader();
   initSidebar();
+
+  let router = new Router();
+  router.init();
 }
 
 function initHeader() {

@@ -7,7 +7,7 @@ export class Sidebar {
     </div>
     <ul class="sidebar__page">
         <li>
-            <a href="/detail" class="sidebar__detail">Detail</a>
+            <a href="/detail" data-href="/detail" class="sidebar__detail">Detail</a>
         </li>
         <li>
             <a href="" class="sidebar__info">Information</a>

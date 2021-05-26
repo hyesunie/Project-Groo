@@ -11,8 +11,8 @@ globalRouter.get(routes.home, (req, res) => {
   }
 });
 
-globalRouter.get(routes.detail, (req, res) => {
-  res.render("detail.html");
-});
+// globalRouter.get(routes.detail, (req, res) => {
+//   res.render("detail.html");
+// });
 
 export default globalRouter;
