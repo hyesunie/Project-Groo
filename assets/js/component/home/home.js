@@ -37,6 +37,7 @@ export class Home {
 
     this.paintPage(loadedUser);
     this.paintHabits(loadedHabits);
+    this.paintComment(loadedCommnet);
   }
 
   paintHabits(habits) {
@@ -62,6 +63,8 @@ export class Home {
     userConfirmation.classList.remove(this.#NONE);
   }
   paintComment(comment) {
+    const treeComment = document.querySelector(".tree__comment");
+
     treeComment.innerHTML = comment;
   }
 }
