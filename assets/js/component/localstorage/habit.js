@@ -15,4 +15,7 @@ export class Habit extends LocalStorage {
 
     return parseHabits;
   }
+  saveHabits(value) {
+    this.save(this.#HABIT_LIST, JSON.stringify(value));
+  }
 }
