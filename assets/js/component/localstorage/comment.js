@@ -11,4 +11,7 @@ export class Comment extends LocalStorage {
     const currentComment = this.load(this.#COMMENT);
     return currentComment;
   }
+  saveComment(value) {
+    this.save(this.#COMMENT, value);
+  }
 }
