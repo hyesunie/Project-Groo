@@ -1,12 +1,22 @@
 import { Home } from "./component/home/home";
 import { Detail } from "./component/detail/detail";
+import { Habit } from "./component/localstorage/habit";
+import { Comment } from "./component/localstorage/comment";
+import { User } from "./component/localstorage/user";
 
 export class Router {
   #routes = [
-    { path: "/", pageobj: () => new Home() },
-    { path: "/detail", pageobj: () => new Detail() },
+    { path: "/", pageobj: () => new Home(this.habit, this.comment, this.user) },
+    {
+      path: "/detail",
+      pageobj: () => new Detail(this.habit, this.comment, this.user),
+    },
   ];
-  constructor() {}
+  constructor() {
+    this.habit = new Habit();
+    this.comment = new Comment();
+    this.user = new User();
+  }
 
   init() {
     document.addEventListener("click", (e) => {
@@ -27,7 +37,7 @@ export class Router {
   }
 
   route() {
-    const page = this.#routes.find((item, index) => {
+    const page = this.#routes.find((item) => {
       if (item.path === location.pathname) return true;
     });
 

@@ -11,8 +11,12 @@ globalRouter.get(routes.home, (req, res) => {
   }
 });
 
-// globalRouter.get(routes.detail, (req, res) => {
-//   res.render("detail.html");
-// });
+globalRouter.get(routes.detail, (req, res) => {
+  try {
+    res.render("index.html");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 export default globalRouter;
