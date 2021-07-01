@@ -48,7 +48,6 @@ export class Home {
 
   paintHabits(habits) {
     const loadHabitList = document.querySelector(".load__habit__list");
-    this.handleClickhabits = this.handleClickhabits.bind(this);
 
     for (const item of habits) {
       const input = document.createElement("input");
@@ -56,7 +55,7 @@ export class Home {
       input.value = item.habit;
       input.classList.add("habit__btn");
 
-      input.addEventListener("click", this.handleClickhabits);
+      input.addEventListener("click", (evt) => this.handleClickhabits(evt));
       loadHabitList.appendChild(input);
     }
   }
@@ -81,8 +80,9 @@ export class Home {
     console.log(this.firstVisitor.classList);
     this.firstVisitor.classList.remove(this.#NONE);
     this.userConfirmation.classList.add(this.#NONE);
-    this.handleSaveUser = this.handleSaveUser.bind(this);
-    this.firstVisitor.addEventListener("submit", this.handleSaveUser);
+    this.firstVisitor.addEventListener("submit", (evt) =>
+      this.handleSaveUser(evt)
+    );
   }
   paintComment(comment) {
     const treeComment = document.querySelector(".tree__comment");

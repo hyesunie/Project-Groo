@@ -1,7 +1,7 @@
 import { Habit } from "../localstorage/habit";
 
 export class Detail {
-  LIST = [];
+  #list = [];
   constructor(habit, comment, user) {
     this.habit = habit;
     this.comment = comment;
@@ -32,8 +32,9 @@ export class Detail {
 
     this.paintHabits(loadedHabits);
 
-    this.handleAddHabitSubmit = this.handleAddHabitSubmit.bind(this);
-    addHabitForm.addEventListener("submit", this.handleAddHabitSubmit);
+    addHabitForm.addEventListener("submit", (evt) =>
+      this.handleAddHabitSubmit(evt)
+    );
   }
 
   paintHabits(habits) {
@@ -44,11 +45,10 @@ export class Detail {
       const span = document.createElement("span");
       const li = document.createElement("li");
       const btn = document.createElement("button");
-      const habitId = this.LIST.length;
+      const habitId = this.list.length;
 
       btn.innerText = "x";
-      this.deleteHabit = this.deleteHabit.bind(this);
-      btn.addEventListener("click", this.deleteHabit);
+      btn.addEventListener("click", (evt) => this.deleteHabit(evt));
 
       span.innerHTML = value;
 
@@ -63,20 +63,20 @@ export class Detail {
         id: habitId,
       };
 
-      this.LIST.push(habitobj);
+      this.list.push(habitobj);
     }
-    this.habit.saveHabits(this.LIST);
+    this.habit.saveHabits(this.list);
   }
 
   deleteHabit(event) {
-    const temp = this.LIST;
+    const temp = this.list;
     const delLi = event.target.parentNode;
 
-    const newList = temp.filter((item) => item.id !== parseInt(delLi.id));
-    this.LIST = newList;
+    const newList = temp.filter((item) => item.id !== Number(delLi.id));
+    this.list = newList;
 
     delLi.remove();
-    this.habit.saveHabits(this.LIST);
+    this.habit.saveHabits(this.list);
   }
 
   handleAddHabitSubmit(event) {
