@@ -1,7 +1,6 @@
-import { Habit } from "../localstorage/habit";
-
 export class Detail {
   #list = [];
+
   constructor(habit, comment, user) {
     this.habit = habit;
     this.comment = comment;
@@ -22,15 +21,18 @@ export class Detail {
 <div class="comment__container">
     <p>Comment</p>
     <input type="text" class="user__comment" value="Comment" disabled></input>
-    <button>edit</button>      
+    <button class="comment-edit">edit</button>      
     </div>`;
   }
 
   paintInfo() {
     const addHabitForm = document.querySelector(".add__habit");
+
     const loadedHabits = this.habit.loadHabits();
+    const loadedComment = this.comment.loadComment();
 
     this.paintHabits(loadedHabits);
+    this.paintComment(loadedComment);
 
     addHabitForm.addEventListener("submit", (evt) =>
       this.handleAddHabitSubmit(evt)
@@ -45,7 +47,7 @@ export class Detail {
       const span = document.createElement("span");
       const li = document.createElement("li");
       const btn = document.createElement("button");
-      const habitId = this.list.length;
+      const habitId = this.#list.length;
 
       btn.innerText = "x";
       btn.addEventListener("click", (evt) => this.deleteHabit(evt));
@@ -63,20 +65,20 @@ export class Detail {
         id: habitId,
       };
 
-      this.list.push(habitobj);
+      this.#list.push(habitobj);
     }
-    this.habit.saveHabits(this.list);
+    this.habit.saveHabits(this.#list);
   }
 
   deleteHabit(event) {
-    const temp = this.list;
+    const temp = this.#list;
     const delLi = event.target.parentNode;
 
     const newList = temp.filter((item) => item.id !== Number(delLi.id));
-    this.list = newList;
+    this.#list = newList;
 
     delLi.remove();
-    this.habit.saveHabits(this.list);
+    this.habit.saveHabits(this.#list);
   }
 
   handleAddHabitSubmit(event) {
@@ -91,5 +93,29 @@ export class Detail {
 
     this.paintHabits(newHabit);
     inputHabit.value = "";
+  }
+
+  paintComment(cmt) {
+    const inputComment = document.querySelector(".user__comment");
+    const editButton = document.querySelector(".comment-edit");
+    if (cmt) {
+      inputComment.value = cmt;
+    }
+
+    editButton.addEventListener("click", (evt) =>
+      this.handleClickCommentEdit(evt)
+    );
+  }
+
+  handleClickCommentEdit(evt) {
+    const inputComment = document.querySelector(".user__comment");
+
+    inputComment.toggleAttribute("disabled");
+
+    if (inputComment.getAttribute("disabled") !== null) {
+      this.comment.saveComment(inputComment.value);
+    } else {
+      inputComment.value = "";
+    }
   }
 }
