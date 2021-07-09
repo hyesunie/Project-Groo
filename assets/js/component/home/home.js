@@ -1,7 +1,3 @@
-import { Habit } from "../localstorage/habit";
-import { User } from "../localstorage/user";
-import { Comment } from "../localstorage/comment";
-
 export class Home {
   #NONE = "none";
   firstVisitor = document.querySelector(".firstvisit");
@@ -77,7 +73,6 @@ export class Home {
       this.userConfirmation.classList.remove(this.#NONE);
       return;
     }
-    console.log(this.firstVisitor.classList);
     this.firstVisitor.classList.remove(this.#NONE);
     this.userConfirmation.classList.add(this.#NONE);
     this.firstVisitor.addEventListener("submit", (evt) =>

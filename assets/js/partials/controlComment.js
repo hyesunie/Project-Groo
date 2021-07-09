@@ -19,7 +19,7 @@ function loadComment() {
 
 function handleClickEdit() {
   userComment.toggleAttribute("disabled");
-
+  
   if (userComment.getAttribute("disabled") !== null) {
     saveComment(userComment.value);
   }
