@@ -113,8 +113,6 @@ export class Detail {
 
     if (inputComment.getAttribute("disabled") !== null) {
       this.comment.saveComment(inputComment.value);
-    } else {
-      inputComment.value = "";
     }
   }
 }
