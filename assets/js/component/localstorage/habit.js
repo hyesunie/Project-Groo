@@ -9,8 +9,6 @@ export class Habit extends LocalStorage {
     const habits = this.load(this.#HABIT_LIST);
     let parseHabits = "";
 
-    console.log(habits);
-
     if (habits) {
       parseHabits = JSON.parse(habits);
     }
