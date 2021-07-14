@@ -1,9 +1,5 @@
 import { Home } from "./component/home/home";
 import { Detail } from "./component/detail/detail";
-import { Habit } from "./component/localstorage/habit";
-import { Comment } from "./component/localstorage/comment";
-import { User } from "./component/localstorage/user";
-import { Tree } from "./component/localstorage/tree";
 
 export class Router {
   #routes = [
@@ -16,11 +12,11 @@ export class Router {
       pageobj: () => new Detail(this.habit, this.comment, this.user),
     },
   ];
-  constructor() {
-    this.habit = new Habit();
-    this.comment = new Comment();
-    this.user = new User();
-    this.tree = new Tree();
+  constructor(tree, habit, comment, user) {
+    this.habit = habit;
+    this.comment = comment;
+    this.user = user;
+    this.tree = tree;
   }
 
   init() {
@@ -48,7 +44,6 @@ export class Router {
 
     const section = document.querySelector("section");
     section.innerHTML = page.pageobj().body;
-
     page.pageobj().paintInfo();
   }
 }
