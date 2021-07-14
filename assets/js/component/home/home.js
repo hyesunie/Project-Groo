@@ -128,5 +128,6 @@ export class Home {
     }
 
     this.paintTree(obg);
+    this.tree.dataModify(obg);
   }
 }
