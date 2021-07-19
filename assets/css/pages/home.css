@@ -9,7 +9,7 @@
 .userConfirmation {
   display: grid;
   height: 100%;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-template-areas: "list tree";
 }
 
