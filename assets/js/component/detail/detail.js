@@ -7,7 +7,8 @@ export class Detail {
     this.user = user;
   }
   get body() {
-    return `<div class="detail__habits__container">
+    return `<div class="detail__container">
+    <div class="detail__habits__container">
     <p>Habit List</p>
     <div class="habit__management">
         <form class="add__habit">
@@ -22,6 +23,7 @@ export class Detail {
     <p>Comment</p>
     <input type="text" class="user__comment" value="Comment" disabled></input>
     <button class="comment-edit">edit</button>      
+    </div>
     </div>`;
   }
 

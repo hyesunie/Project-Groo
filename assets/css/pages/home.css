@@ -1,17 +1,25 @@
-.userConfirmation {
+/* .userConfirmation {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+} */
+
+.userConfirmation {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: "list tree";
 }
 
 .home__habit__list {
+  grid-area: list;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 60%;
+  /* height: 100%; */
+  /* width: 60%; */
 }
 
 .home__habit__list form {
@@ -19,8 +27,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: auto;
-  width: 100%;
+  /* height: auto; */
+  /* width: 100%; */
 }
 
 .load__habit__list {
@@ -28,11 +36,13 @@
 }
 
 .tree__container {
+  grid-area: tree;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  /* width: 40%; */
   align-items: center;
   justify-content: center;
+  margin: 5rem;
 }
 
 .tree__container a {
@@ -84,4 +94,15 @@ input[type="image"] {
 
 .none {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .userConfirmation {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1fr;
+    grid-template-areas: "tree" "list";
+  }
+  .home__habit__list form {
+    flex-direction: column;
+  }
 }
